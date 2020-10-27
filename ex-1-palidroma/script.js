@@ -1,7 +1,7 @@
-inputUtente = prompt("Inserisci una parola");
+var inputUtente = prompt("Inserisci una parola");
 console.log(inputUtente);
 
-// creo la funzione che mi inverte le lettere dell'input dell'utente
+// dichiaro la funzione per invertire le lettere. inputUtente è l'argomento della funzione
 function wordReverse(inputUtente) {
   var chars = inputUtente.split(""); //trasformo la variabile inputUtente in arrey dividendo le lettere
 
@@ -12,13 +12,22 @@ function wordReverse(inputUtente) {
 
 // creo la funzione che verifica che il palindromo sia vero
 function palindroma(inputUtente) {
+
   var palindroma = false;
+
   if (inputUtente === wordReverse(inputUtente)) {
     palindroma = true;
-    document.getElementById("result").innerHTML = inputUtente;
-  } // else {
-  //   document.getElementById("result").innerHTML = inputUtente + "non è palindromo";
-  // }
+
+  }
 
   return palindroma;
+}
+console.log(wordReverse(inputUtente));
+
+// richiamo le funzioni
+
+if (palindroma(inputUtente)) {
+  document.getElementById("result").innerHTML = inputUtente + " è palindroma/o";
+} else {
+  document.getElementById("result").innerHTML = inputUtente + " non è palindroma/o";
 }
